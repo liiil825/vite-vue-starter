@@ -102,20 +102,8 @@ export function useFontVars() {
   }
 }
 
-export function useDarkThemeCommonVars() {
-  const commonVars = useThemeCommonVars()
-  const darkColors = useDarkColors()
-  return {
-    ...commonVars,
-    ...darkColors,
-  }
-}
-
 export function useThemeCommonVars() {
-  const fontVars = useFontVars()
-  const lightColors = useLightColors()
   return {
-    ...fontVars,
     cubicBezierEaseInOut: 'cubic-bezier(.4, 0, .2, 1)',
     cubicBezierEaseOut: 'cubic-bezier(0, 0, .2, 1)',
     cubicBezierEaseIn: 'cubic-bezier(.4, 0, 1, 1)',
@@ -128,7 +116,6 @@ export function useThemeCommonVars() {
     heightMedium: '34px',
     heightLarge: '40px',
     heightHuge: '46px',
-    ...lightColors,
     opacity1: '0.82',
     opacity2: '0.72',
     opacity3: '0.38',
@@ -170,5 +157,23 @@ export function useThemeCommonVars() {
     boxShadow1: '0 1px 2px -2px rgba(0, 0, 0, .08), 0 3px 6px 0 rgba(0, 0, 0, .06), 0 5px 12px 4px rgba(0, 0, 0, .04)',
     boxShadow2: '0 3px 6px -4px rgba(0, 0, 0, .12), 0 6px 16px 0 rgba(0, 0, 0, .08), 0 9px 28px 8px rgba(0, 0, 0, .05)',
     boxShadow3: '0 6px 16px -9px rgba(0, 0, 0, .08), 0 9px 28px 0 rgba(0, 0, 0, .05), 0 12px 48px 16px rgba(0, 0, 0, .03)',
+  }
+}
+
+export function useLightThemeCommonVars() {
+  const fontVars = useFontVars()
+  const lightColors = useLightColors()
+  return {
+    ...fontVars,
+    ...lightColors,
+  }
+}
+
+export function useDarkThemeCommonVars() {
+  const commonVars = useThemeCommonVars()
+  const darkColors = useDarkColors()
+  return {
+    ...commonVars,
+    ...darkColors,
   }
 }

@@ -2,7 +2,7 @@ import type { GlobalThemeOverrides } from 'naive-ui'
 import { computed, watch } from 'vue'
 import { darkTheme, useOsTheme } from 'naive-ui'
 import { useAppStore } from '@/store'
-import { useDarkThemeCommonVars, useThemeCommonVars } from '@/hooks/useThemeVars'
+import { useDarkThemeCommonVars, useLightThemeCommonVars } from '@/hooks/useThemeVars'
 
 export function useTheme() {
   const appStore = useAppStore()
@@ -27,7 +27,7 @@ export function useTheme() {
       }
     }
     return {
-      common: useThemeCommonVars(),
+      common: useLightThemeCommonVars(),
     }
   })
 

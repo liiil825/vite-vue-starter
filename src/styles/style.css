@@ -1,15 +1,13 @@
 #app {
   display: flex;
   flex-direction: column;
-}
-
-#app {
-  --bg-color: '#fff';
-}
-#app.dark {
-  --bg-color: '#121212';
-}
-
-#app {
   background-color: var(--bg-color);
+}
+
+:root {
+  --bg-color: #0066cc;
+}
+
+:root.dark {
+  --bg-color: #121212;
 }

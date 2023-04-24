@@ -82,7 +82,7 @@ function logKey(e: any) {
   </main>
 
   <footer>
-    <p>&copy; 2023 ChatGPT - All Rights Reserved</p>
+    <p>&copy; 2023</p>
   </footer>
 </template>
 
