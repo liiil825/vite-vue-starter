@@ -1,10 +1,6 @@
 <script setup lang="ts">
 import { NButton, useDialog, useMessage } from 'naive-ui'
 import { t } from '@/i18n'
-import { useAppStore } from '@/store'
-
-const appStore = useAppStore()
-document.body.addEventListener('keydown', logKey)
 
 const dialog = useDialog()
 const message = useMessage()
@@ -21,22 +17,9 @@ function handleConfirm() {
     },
   })
 }
-
-function logKey(e: any) {
-  if (e.code === 'KeyT') {
-    message.success(`Keydown ${e.code}`)
-    appStore.toggleTheme()
-  }
-
-  message.success(`Keydown ${e.code}`)
-}
 </script>
 
 <template>
-  <header>
-    <h1>ChatGPT - Your Personal Assistant</h1>
-  </header>
-
   <main>
     <div>
       <section>
@@ -80,21 +63,9 @@ function logKey(e: any) {
       </p>
     </div>
   </main>
-
-  <footer>
-    <p>&copy; 2023</p>
-  </footer>
 </template>
 
 <style>
-/* Style for the header */
-header {
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
-  text-align: center;
-}
-
 .h-full {
   display: flex;
   flex-direction: column;
@@ -116,23 +87,12 @@ main {
 
 h1,
 h2 {
-  color: #333;
+  color: #fff;
 }
 
 ul,
 ol {
   list-style: disc;
   margin-left: 20px;
-}
-
-/* Style for the footer */
-footer {
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
-  text-align: center;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
 }
 </style>

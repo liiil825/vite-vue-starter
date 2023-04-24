@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { NaiveProvider } from '@/plugins'
+import Layout from '@/components/layout/index.vue'
 </script>
 
 <template>
-  <NaiveProvider>
+  <Layout>
     <RouterView />
-  </NaiveProvider>
+  </Layout>
 </template>
