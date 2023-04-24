@@ -16,6 +16,16 @@ export const useAppStore = defineStore('app-store', {
       this.recordState()
     },
 
+    toggleTheme() {
+      const { theme } = this
+      if (theme === 'dark')
+        this.theme = 'light'
+      else
+        this.theme = 'dark'
+
+      this.recordState()
+    },
+
     setLanguage(language: Language) {
       if (this.language !== language) {
         this.language = language

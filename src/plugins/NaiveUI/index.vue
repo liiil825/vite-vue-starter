@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { defineComponent, h } from 'vue'
 import {
+  NConfigProvider,
   NDialogProvider,
   NLoadingBarProvider,
   NMessageProvider,
@@ -10,6 +11,11 @@ import {
   useMessage,
   useNotification,
 } from 'naive-ui'
+import { useTheme } from '@/hooks/useTheme'
+import { useLanguage } from '@/hooks/useLanguage'
+
+const { theme, themeOverrides } = useTheme()
+const { language } = useLanguage()
 
 function registerNaiveTools() {
   window.$loadingBar = useLoadingBar()
@@ -30,14 +36,16 @@ const NaiveProviderContent = defineComponent({
 </script>
 
 <template>
-  <NLoadingBarProvider>
-    <NDialogProvider>
-      <NNotificationProvider>
-        <NMessageProvider>
-          <slot />
-          <NaiveProviderContent />
-        </NMessageProvider>
-      </NNotificationProvider>
-    </NDialogProvider>
-  </NLoadingBarProvider>
+  <NConfigProvider class="h-full" :theme="theme" :theme-overrides="themeOverrides" :locale="language">
+    <NLoadingBarProvider>
+      <NDialogProvider>
+        <NNotificationProvider>
+          <NMessageProvider>
+            <slot />
+            <NaiveProviderContent />
+          </NMessageProvider>
+        </NNotificationProvider>
+      </NDialogProvider>
+    </NLoadingBarProvider>
+  </NConfigProvider>
 </template>

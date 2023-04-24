@@ -1,5 +1,5 @@
 import type { App } from 'vue'
-import { createI18n, useI18n } from 'vue-i18n'
+import { createI18n } from 'vue-i18n'
 import enUS from './locales/en-US.yml'
 import zhCN from './locales/zh-CN.yml'
 import { useAppStoreWithOut } from '@/store/modules/app'

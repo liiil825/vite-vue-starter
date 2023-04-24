@@ -1,6 +1,7 @@
-import '@/styles/lib/tailwind.css'
 import '@/styles/global.less'
 import '@/styles/style.css'
+import '@/styles/lib/tailwind.css'
+import '@/styles/lib/github-markdown.less'
 
 /** Tailwind's Preflight Style Override */
 function naiveStyleOverride() {
